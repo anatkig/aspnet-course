@@ -937,6 +937,23 @@ hr {
   line-height: 1.5;
 }
 
+.module-ref-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 8px;
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.module-ref-link:hover {
+  background: rgba(16, 185, 129, 0.2);
+}
+
 .rq-actions {
   display: flex;
   justify-content: center;

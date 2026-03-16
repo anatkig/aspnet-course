@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { quickLineChallenges, type QuickLineChallenge } from '../data/quickLines';
 import { useProgress } from '../context/ProgressContext';
+import { course } from '../data';
 
 function pickRandom(): QuickLineChallenge {
   return quickLineChallenges[Math.floor(Math.random() * quickLineChallenges.length)];
@@ -99,6 +100,14 @@ export function QuickLine({ onClose }: Props) {
             {result === 'correct' && (
               <div className="ql-result correct">
                 <p>✅ Correct!</p>
+                <p className="rq-explanation">{challenge.explanation}</p>
+                <a
+                  className="module-ref-link"
+                  href={`#/module/${challenge.moduleId}`}
+                  onClick={onClose}
+                >
+                  📖 Learn more: {course.modules.find(m => m.id === challenge.moduleId)?.title}
+                </a>
                 <div className="ql-actions">
                   <span className="rq-streak">🔥 Streak: {streak}</span>
                   <button className="btn btn-primary" onClick={next}>
@@ -116,6 +125,14 @@ export function QuickLine({ onClose }: Props) {
             <div className="ql-answer-reveal">
               <code>{challenge.answer}</code>
             </div>
+            <p className="rq-explanation">{challenge.explanation}</p>
+            <a
+              className="module-ref-link"
+              href={`#/module/${challenge.moduleId}`}
+              onClick={onClose}
+            >
+              📖 Learn more: {course.modules.find(m => m.id === challenge.moduleId)?.title}
+            </a>
             <p className="ql-streak-msg">That was <strong>{endedStreak}</strong> correct answer{endedStreak !== 1 ? 's' : ''} in a row. Keep going!</p>
             <button className="btn btn-primary" onClick={next}>
               Continue →

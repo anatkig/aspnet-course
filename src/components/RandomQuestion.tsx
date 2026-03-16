@@ -12,7 +12,18 @@ function getAllQuestions(): QuizQuestion[] {
   return questions;
 }
 
+function buildQuestionModuleMap(): Map<string, { moduleId: string; moduleTitle: string }> {
+  const map = new Map<string, { moduleId: string; moduleTitle: string }>();
+  for (const mod of course.modules) {
+    for (const q of mod.test) {
+      map.set(q.id, { moduleId: mod.id, moduleTitle: mod.title });
+    }
+  }
+  return map;
+}
+
 const allQuestions = getAllQuestions();
+const questionModuleMap = buildQuestionModuleMap();
 
 function pickRandom(): QuizQuestion {
   return allQuestions[Math.floor(Math.random() * allQuestions.length)];
@@ -77,7 +88,18 @@ export function RandomQuestion({ onClose }: Props) {
               })}
             </div>
             {revealed && selected === question.correctAnswer && (
-              <p className="rq-explanation">{question.explanation}</p>
+              <>
+                <p className="rq-explanation">{question.explanation}</p>
+                {questionModuleMap.has(question.id) && (
+                  <a
+                    className="module-ref-link"
+                    href={`#/module/${questionModuleMap.get(question.id)!.moduleId}`}
+                    onClick={onClose}
+                  >
+                    📖 Learn more: {questionModuleMap.get(question.id)!.moduleTitle}
+                  </a>
+                )}
+              </>
             )}
             {revealed && selected === question.correctAnswer && (
               <div className="rq-actions">
@@ -92,6 +114,16 @@ export function RandomQuestion({ onClose }: Props) {
         {showStreakEnd && (
           <div className="rq-streak-end">
             <p>OK. This one is incorrect. However, that was <strong>{endedStreak}</strong> correct answer{endedStreak !== 1 ? 's' : ''} in a row. Congrats!</p>
+            <p className="rq-explanation">{question.explanation}</p>
+            {questionModuleMap.has(question.id) && (
+              <a
+                className="module-ref-link"
+                href={`#/module/${questionModuleMap.get(question.id)!.moduleId}`}
+                onClick={onClose}
+              >
+                📖 Learn more: {questionModuleMap.get(question.id)!.moduleTitle}
+              </a>
+            )}
             <button className="btn btn-primary" onClick={next}>
               Continue →
             </button>

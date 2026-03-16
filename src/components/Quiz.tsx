@@ -107,6 +107,11 @@ export function Quiz({ title, questions, onComplete, previousResult, renderResul
               {result.passed ? '✓ Passed' : '✗ Failed'} — {result.score}/{result.total} (
               {Math.round((result.score / result.total) * 100)}%)
             </p>
+            {!result.passed && (
+              <button className="btn btn-primary" onClick={() => { setResult(null); setAnswers({}); setSubmitted(false); }}>
+                🔄 Try Again
+              </button>
+            )}
           </div>
         )
       )}
