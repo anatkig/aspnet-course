@@ -64,7 +64,7 @@ var bob = new Person("Bob", 25) { Email = "bob@example.com" };
 | protected | Same class + derived classes |
 | internal | Same assembly |
 | protected internal | Same assembly or derived classes |`,
-      task: {
+      tasks: [{
         description:
           'Create a `BankAccount` class with properties for AccountHolder (string), Balance (decimal, read-only from outside), and methods Deposit and Withdraw that validate amounts.',
         starterCode: `public class BankAccount
@@ -107,7 +107,7 @@ var bob = new Person("Bob", 25) { Email = "bob@example.com" };
           'Validate that deposit/withdraw amounts are positive',
           'Return bool from Withdraw to indicate success/failure',
         ],
-      },
+      }],
     },
     {
       id: 'mod3-t2',
@@ -188,7 +188,7 @@ public class Circle : Shape
     public override double Area() => Math.PI * Radius * Radius;
 }
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create an abstract class `Shape` with an abstract method `Area()` and `Perimeter()`. Implement `Rectangle` and `Circle` subclasses. Create an array of shapes and print each area and perimeter.',
         starterCode: `using System;
@@ -254,7 +254,7 @@ class Program
           'Each subclass must override all abstract methods',
           'shape.GetType().Name gives the runtime type name',
         ],
-      },
+      }],
     },
     {
       id: 'mod3-t3',
@@ -324,7 +324,7 @@ public interface ILogger
 | Constructors | No | Yes |
 | Default methods | C# 8+ | Yes |
 | Access modifiers | Public only (default) | Any |`,
-      task: {
+      tasks: [{
         description:
           'Define an `IRepository<T>` interface with methods: GetById, GetAll, Add, Update, Delete. Implement an in-memory `InMemoryRepository<T>` using a List<T>.',
         starterCode: `using System;
@@ -375,7 +375,7 @@ public class InMemoryRepository<T> : IRepository<T> where T : IEntity
           'Consider adding a constraint like where T : IEntity',
           'List<T>.FirstOrDefault can find items by predicate',
         ],
-      },
+      }],
     },
   ],
   test: [

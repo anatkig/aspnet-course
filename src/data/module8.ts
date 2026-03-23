@@ -69,7 +69,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Define a DbContext with two entities: `Blog` (Id, Title, Url) and `Post` (Id, Title, Content, BlogId). Configure the one-to-many relationship in OnModelCreating.',
         starterCode: `using Microsoft.EntityFrameworkCore;
@@ -117,7 +117,7 @@ public class BlogDbContext : DbContext
           'Configure relationships using HasMany/WithOne/HasForeignKey',
           'DbSet<T> represents a table in the database',
         ],
-      },
+      }],
     },
     {
       id: 'mod8-t2',
@@ -205,7 +205,7 @@ var products = await _db.Products
     .AsNoTracking()
     .ToListAsync();
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create a `ProductRepository` class that uses EF Core for: GetAll with optional filtering by name, GetById, Create, Update, Delete. Use async methods and include pagination support.',
         starterCode: `public class ProductRepository
@@ -275,7 +275,7 @@ var products = await _db.Products
           'Use AsNoTracking() for read-only queries to improve performance',
           'Return a tuple (Items, Total) for paginated results',
         ],
-      },
+      }],
     },
     {
       id: 'mod8-t3',
@@ -368,7 +368,7 @@ protected override void OnModelCreating(ModelBuilder mb)
     );
 }
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Design entities for an e-commerce: Customer (Id, Name, Email), Order (Id, OrderDate, CustomerId), and OrderItem (Id, ProductName, Quantity, UnitPrice, OrderId). Configure all relationships and add seed data.',
         starterCode: `using Microsoft.EntityFrameworkCore;
@@ -430,7 +430,7 @@ public class ECommerceDbContext : DbContext
           'Configure Foreign Keys with HasForeignKey',
           'Use HasPrecision for decimal columns to avoid precision warnings',
         ],
-      },
+      }],
     },
   ],
   test: [

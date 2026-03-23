@@ -79,7 +79,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 app.UseAuthentication();
 app.UseAuthorization();
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create a `TokenService` class that generates JWT tokens with user claims (Id, Name, Email, Role). Include token expiration and signing with HMAC-SHA256.',
         starterCode: `using System.IdentityModel.Tokens.Jwt;
@@ -131,7 +131,7 @@ public class TokenService
           'Add claims for user identity: Id, Name, Email, Role',
           'Set expiration with DateTime.UtcNow.AddHours()',
         ],
-      },
+      }],
     },
     {
       id: 'mod9-t2',
@@ -211,7 +211,7 @@ public class MinimumAgeHandler : AuthorizationHandler<MinimumAgeRequirement>
 [Authorize(Roles = "Admin")]  // Specific role
 [Authorize(Policy = "CustomPolicy")]  // Custom policy
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Set up authorization with two policies: "AdminOnly" requiring the Admin role, and "VerifiedUser" requiring a "EmailVerified" claim set to "true". Apply them to controller endpoints.',
         starterCode: `// Program.cs
@@ -258,7 +258,7 @@ public class AdminController : ControllerBase
           'RequireRole checks the Role claim, RequireClaim checks any claim',
           '[AllowAnonymous] allows unauthenticated access to specific endpoints',
         ],
-      },
+      }],
     },
     {
       id: 'mod9-t3',
@@ -343,7 +343,7 @@ public class AuthController : ControllerBase
     }
 }
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create a registration endpoint using UserManager that validates password requirements, creates the user, and assigns a default role. Return appropriate error messages for failures.',
         starterCode: `[HttpPost("register")]
@@ -385,7 +385,7 @@ public record RegisterRequest(string Email, string FirstName, string LastName, s
           'UserManager.CreateAsync returns IdentityResult with Errors',
           'AddToRoleAsync assigns a role after successful creation',
         ],
-      },
+      }],
     },
   ],
   test: [

@@ -87,7 +87,7 @@ public class ExceptionMiddleware
     }
 }
 \`\`\``,
-      task: {
+      tasks: [{
         description: 'Create a custom exception middleware that handles NotFoundException (404), ValidationException (400), and general exceptions (500). Use ILogger for structured logging.',
         starterCode: `public class ExceptionMiddleware
 {
@@ -140,7 +140,7 @@ public class NotFoundException : Exception
           'Set context.Response.StatusCode before writing the response',
           'Use structured logging: _logger.LogError(ex, "Template {Param}", value)',
         ],
-      },
+      }],
     },
     {
       id: 'mod10-t2',
@@ -203,7 +203,7 @@ _logger.LogInformation("User {UserId} placed order {OrderId}", userId, orderId);
 // Bad — string interpolation loses structure
 _logger.LogInformation($"User {userId} placed order {orderId}");
 \`\`\``,
-      task: {
+      tasks: [{
         description: 'Configure Serilog in a Program.cs to log to Console and a rolling file. Add request logging middleware. Create a service that uses ILogger with different log levels.',
         starterCode: `// Program.cs
 // TODO: Configure Serilog
@@ -261,7 +261,7 @@ public class PaymentService
           'Use structured logging with named placeholders, not string interpolation',
           'app.UseSerilogRequestLogging() logs HTTP request details automatically',
         ],
-      },
+      }],
     },
     {
       id: 'mod10-t3',
@@ -311,7 +311,7 @@ public class ApiHealthCheck : IHealthCheck
 builder.Services.AddHealthChecks()
     .AddCheck<ApiHealthCheck>("external-api");
 \`\`\``,
-      task: {
+      tasks: [{
         description: 'Create a custom health check that verifies a database connection and an external API. Register both checks with different tags (e.g., "db" and "api") and map separate health endpoints.',
         starterCode: `// TODO: Create DatabaseHealthCheck
 // TODO: Create ExternalApiHealthCheck
@@ -374,7 +374,7 @@ app.MapHealthChecks("/health/db", new HealthCheckOptions
           'Use tags to group checks and filter them in different endpoints',
           'Use CanConnectAsync() to verify database connectivity',
         ],
-      },
+      }],
     },
   ],
   test: [

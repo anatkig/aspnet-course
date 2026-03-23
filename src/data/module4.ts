@@ -65,7 +65,7 @@ stack.Push(1);
 stack.Push(2);
 int top = stack.Pop(); // 2
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create a phone book using Dictionary<string, string>. Support adding contacts, looking up by name, and listing all contacts sorted by name.',
         starterCode: `using System;
@@ -108,7 +108,7 @@ class PhoneBook
           'TryGetValue avoids exceptions when a key does not exist',
           'OrderBy(c => c.Key) sorts dictionary entries by key',
         ],
-      },
+      }],
     },
     {
       id: 'mod4-t2',
@@ -169,7 +169,7 @@ LINQ queries are **lazy** — they execute only when you iterate or materialize:
 var query = numbers.Where(n => n > 5); // not executed yet
 var list = query.ToList();             // NOW it executes
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Given a list of students with Name and Grade properties, use LINQ to: (1) find students with grade >= 90, (2) calculate average grade, (3) group by pass/fail (>= 60), (4) find the top 3 students by grade.',
         starterCode: `using System;
@@ -229,7 +229,7 @@ class Program
           '.GroupBy() creates groups you can iterate with foreach',
           '.OrderByDescending().Take(3) gets the top 3',
         ],
-      },
+      }],
     },
     {
       id: 'mod4-t3',
@@ -285,7 +285,7 @@ var pairs = names.Zip(scores, (n, s) => $"{n}: {s}");
 object[] mixed = { 1, "hello", 2, "world", 3 };
 var strings = mixed.OfType<string>(); // ["hello", "world"]
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Given a list of orders with nested line items, use SelectMany to get all items, then calculate total revenue, find the most expensive item, and group items by category.',
         starterCode: `using System;
@@ -348,7 +348,7 @@ class Program
           'Use .Sum(i => i.Price * i.Quantity) for total revenue',
           '.OrderByDescending().First() gets the most expensive item',
         ],
-      },
+      }],
     },
   ],
   test: [

@@ -59,7 +59,7 @@ await DoWorkAsync(cts.Token);
 \`\`\`
 
 > **Rule**: Never use \`.Result\` or \`.Wait()\` on tasks — it can cause deadlocks. Always use \`await\`.`,
-      task: {
+      tasks: [{
         description:
           'Create an async method that simulates downloading files. It should accept a list of file names, "download" each with a random delay (Task.Delay), and report progress. Use Task.WhenAll to download them in parallel.',
         starterCode: `using System;
@@ -110,7 +110,7 @@ class Program
           'Create a Task for each file and collect them in a list',
           'Task.WhenAll runs all tasks concurrently and awaits all',
         ],
-      },
+      }],
     },
     {
       id: 'mod5-t2',
@@ -183,7 +183,7 @@ catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
 - Don't use exceptions for control flow
 - Always include meaningful messages
 - Use \`throw;\` to rethrow (preserves stack trace), not \`throw ex;\``,
-      task: {
+      tasks: [{
         description:
           'Create a custom `ValidationException` class with a list of error messages. Write a `ValidateUser` method that validates name (not empty), age (1-150), and email (contains @). Throw ValidationException if any checks fail.',
         starterCode: `using System;
@@ -242,7 +242,7 @@ static void ValidateUser(string name, int age, string email)
           'Collect all errors in a List<string> before throwing',
           'string.IsNullOrWhiteSpace checks for null, empty, or whitespace',
         ],
-      },
+      }],
     },
     {
       id: 'mod5-t3',
@@ -311,7 +311,7 @@ public class DatabaseConnection : IDisposable
     }
 }
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create a class `FileProcessor` that implements IDisposable. It should open a (simulated) resource in the constructor and release it in Dispose. Write an async method that uses CancellationToken to process items with a timeout.',
         starterCode: `using System;
@@ -383,7 +383,7 @@ class Program
           'Use CancellationTokenSource with a timeout to auto-cancel',
           'Catch OperationCanceledException when using cancellation tokens',
         ],
-      },
+      }],
     },
   ],
   test: [

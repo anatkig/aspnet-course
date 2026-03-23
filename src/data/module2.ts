@@ -71,7 +71,7 @@ Greet(greeting: "Hey", name: "C"); // Named parameters
 static int Square(int x) => x * x;
 static void Print(string msg) => Console.WriteLine(msg);
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create a method called `CalculateBMI` that takes weight (kg) and height (m) as doubles and returns the BMI. Create another method `ClassifyBMI` that takes a double BMI and returns a string classification.',
         starterCode: `using System;
@@ -118,7 +118,7 @@ class Program
           'Use if/else or early returns for classification',
           ':F1 in string interpolation formats to 1 decimal place',
         ],
-      },
+      }],
     },
     {
       id: 'mod2-t2',
@@ -178,7 +178,7 @@ for (int i = 0; i < colors.Length; i++)
 foreach (string color in colors)
     Console.WriteLine(color);
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create an array of 10 random integers (1-100), print them, sort the array, print the sorted version, and display the min, max, and average.',
         starterCode: `using System;
@@ -226,7 +226,7 @@ class Program
           'string.Join(", ", array) joins array elements into a string',
           'numbers[^1] accesses the last element (index from end)',
         ],
-      },
+      }],
     },
     {
       id: 'mod2-t3',
@@ -290,7 +290,7 @@ string result = sb.ToString();
 \`\`\`
 
 > **Rule of thumb**: Use \`StringBuilder\` when concatenating strings in a loop.`,
-      task: {
+      tasks: [{
         description:
           'Write a method that takes a sentence and returns a new string with each word capitalized (title case). Use string.Split and string.Join.',
         starterCode: `using System;
@@ -336,7 +336,7 @@ class Program
           'Use char.ToUpper() on the first character',
           'Substring(1) gets everything after the first character',
         ],
-      },
+      }],
     },
   ],
   test: [

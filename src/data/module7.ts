@@ -74,7 +74,7 @@ public record Product(int Id, string Name, decimal Price);
 | BadRequest() | 400 | Invalid input |
 | NotFound() | 404 | Resource not found |
 | Conflict() | 409 | Duplicate/conflict |`,
-      task: {
+      tasks: [{
         description:
           'Create a `TodosController` with full CRUD operations for a Todo model (Id, Title, IsCompleted). Implement GET all, GET by id, POST, PUT, and DELETE endpoints.',
         starterCode: `[ApiController]
@@ -136,7 +136,7 @@ public record CreateTodoRequest(string Title);`,
           'CreatedAtAction returns 201 with a Location header',
           'Use a separate request DTO for POST to avoid exposing Id',
         ],
-      },
+      }],
     },
     {
       id: 'mod7-t2',
@@ -189,7 +189,7 @@ The \`[ApiController]\` attribute adds these automatic behaviors:
 app.MapGet("/products/{id:int}", (int id) => { /* ... */ });
 app.MapPost("/products", (Product product) => { /* ... */ });
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create an endpoint that accepts route parameters, query parameters, and a request body. Build a search endpoint GET /api/products/search that accepts category (route), minPrice & maxPrice (query), and returns filtered results.',
         starterCode: `[ApiController]
@@ -246,7 +246,7 @@ public record Product(int Id, string Name, string Category, decimal Price);`,
           'Make query parameters nullable (decimal?) to make them optional',
           'Chain LINQ .Where() calls to build up the filter',
         ],
-      },
+      }],
     },
     {
       id: 'mod7-t3',
@@ -320,7 +320,7 @@ public class FutureDateAttribute : ValidationAttribute
     }
 }
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create DTOs for a user registration endpoint. Define CreateUserRequest with validation attributes for Name (required, 2-50 chars), Email (required, valid email), and Password (required, min 8 chars). Create a corresponding UserResponse DTO that excludes the password.',
         starterCode: `using System.ComponentModel.DataAnnotations;
@@ -360,7 +360,7 @@ public ActionResult<UserResponse> Register(CreateUserRequest request)
           'Create separate request and response DTOs',
           '[ApiController] automatically returns 400 for invalid models',
         ],
-      },
+      }],
     },
   ],
   test: [

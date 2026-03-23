@@ -54,7 +54,7 @@ Console.WriteLine("Hello, World!");
    comment */
 /// <summary>XML documentation comment</summary>
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create a console application that prints your name and age on separate lines using Console.WriteLine.',
         starterCode: `using System;
@@ -82,7 +82,7 @@ class Program
           'Each Console.WriteLine() call adds a newline at the end',
           'Strings are enclosed in double quotes "like this"',
         ],
-      },
+      }],
     },
     {
       id: 'mod1-t2',
@@ -134,7 +134,7 @@ const string AppName = "MyApp";
 int? maybeNull = null;
 double? temperature = 36.6;
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Declare variables of different types: an int for age, a string for name, a double for salary, a bool for isEmployed, and a decimal for accountBalance. Print each with a label.',
         starterCode: `using System;
@@ -171,7 +171,7 @@ class Program
           'Decimal literals need the m suffix: 29.99m',
           'Use the appropriate type for each piece of data',
         ],
-      },
+      }],
     },
     {
       id: 'mod1-t3',
@@ -225,7 +225,7 @@ int? length = name?.Length;  // null (no exception)
 int age = 20;
 string status = age >= 18 ? "Adult" : "Minor";
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Write a program that takes two integers, performs all arithmetic operations (+, -, *, /, %), and prints the results. Also use the ternary operator to check if the first number is even or odd.',
         starterCode: `using System;
@@ -261,7 +261,7 @@ class Program
           'Use % (modulo) to get the remainder',
           'Ternary syntax: condition ? trueValue : falseValue',
         ],
-      },
+      }],
     },
     {
       id: 'mod1-t4',
@@ -339,7 +339,7 @@ string[] fruits = { "Apple", "Banana", "Cherry" };
 foreach (string fruit in fruits)
     Console.WriteLine(fruit);
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Write a program that classifies a temperature: below 0 is "Freezing", 0-15 is "Cold", 16-25 is "Mild", 26-35 is "Warm", above 35 is "Hot". Use if/else. Then print numbers 1-10 using a for loop, skipping multiples of 3.',
         starterCode: `using System;
@@ -385,7 +385,7 @@ class Program
           'Use the continue keyword to skip the current iteration',
           'i % 3 == 0 checks if i is a multiple of 3',
         ],
-      },
+      }],
     },
   ],
   test: [

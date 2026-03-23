@@ -72,7 +72,7 @@ app.Run();
 - **builder.Services** — registers services for dependency injection
 - **app.Use*()** — adds middleware to the pipeline
 - **app.Map*()** — maps endpoints (controllers or minimal APIs)`,
-      task: {
+      tasks: [{
         description:
           'Write a minimal Program.cs that creates a Web API with one GET endpoint "/api/hello" that returns a JSON object with a greeting message and the current UTC time.',
         starterCode: `// Program.cs
@@ -98,7 +98,7 @@ app.Run();`,
           'Return an anonymous object — ASP.NET serializes it to JSON automatically',
           'DateTime.UtcNow gets the current UTC time',
         ],
-      },
+      }],
     },
     {
       id: 'mod6-t2',
@@ -172,7 +172,7 @@ app.Run(async context =>
     await context.Response.WriteAsync("End of pipeline");
 });
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Create a custom middleware class `RequestLoggingMiddleware` that logs the HTTP method, path, and response status code. Register it in the pipeline.',
         starterCode: `using Microsoft.AspNetCore.Http;
@@ -212,7 +212,7 @@ using System.Threading.Tasks;
           'Use ILogger for structured logging instead of Console.WriteLine',
           'Log before and after calling _next(context)',
         ],
-      },
+      }],
     },
     {
       id: 'mod6-t3',
@@ -281,7 +281,7 @@ public class CheckoutService
     }
 }
 \`\`\``,
-      task: {
+      tasks: [{
         description:
           'Define an `IGreetingService` interface with a `Greet(string name)` method. Create two implementations: `FormalGreetingService` and `CasualGreetingService`. Register one as a scoped service and inject it into a minimal API endpoint.',
         starterCode: `// TODO: Define IGreetingService interface
@@ -318,7 +318,7 @@ app.Run();`,
           'Use builder.Services.AddScoped<Interface, Implementation>()',
           'Minimal API endpoints can accept injected services as parameters',
         ],
-      },
+      }],
     },
   ],
   test: [
